@@ -144,6 +144,7 @@ end
 
 local alternate = 0
 local done = false
+local full = false
 local curState = state.EXCAVATING
 while not done do
 while not full do
@@ -235,7 +236,7 @@ if not done then
         turnLeft()
     end
     while zPos < 0 do
-        tryForward()
+        tryForwards()
     end
     
     while depth < curDepth do
