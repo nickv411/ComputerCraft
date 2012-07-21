@@ -231,7 +231,12 @@ if not done then
         turtle.drop()
     end
     
-    goToStart()
+    while zDir ~= 1 do
+        turnLeft()
+    end
+    while zPos < 0 do
+        tryForward()
+    end
     
     while depth < curDepth do
         tryDown()
