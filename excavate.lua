@@ -218,8 +218,8 @@ if not done then
     turnLeft()
     turnLeft()
     
-    tryForward()
-    tryForward()
+    tryForwards()
+    tryForwards()
     
     print( "Dropping everything" )
     if turtle.detectDown() then
