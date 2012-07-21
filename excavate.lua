@@ -135,6 +135,37 @@ local function goToStart()
     end
 end
 
+-- go to start
+-- go two back
+-- drop everything
+-- go back to start
+local function dropAll()
+    goToStart()
+    
+    turnLeft()
+    turnLeft()
+    
+    tryForwards()
+    tryForwards()
+    
+    print( "Dropping everything" )
+    if turtle.detectDown() then
+        turtle.digDown()
+    end
+    
+    for i=1,9 do
+        turtle.select(i)
+        turtle.drop()
+    end
+    
+    while zDir ~= 1 do
+        turnLeft()
+    end
+    while zPos < 0 do
+        tryForwards()
+    end
+end
+
 print( "Excavating..." )
 
 local reseal = false
@@ -214,38 +245,18 @@ if not done then
     -- go back to surface, drop items, go back down, continue excavating
     print( "Turtle is full" )
     local curDepth = depth
-    goToStart()
     
-    turnLeft()
-    turnLeft()
-    
-    tryForwards()
-    tryForwards()
-    
-    print( "Dropping everything" )
-    if turtle.detectDown() then
-        turtle.digDown()
-    end
-    
-    for i=1,9 do
-        turtle.select(i)
-        turtle.drop()
-    end
-    
-    while zDir ~= 1 do
-        turnLeft()
-    end
-    while zPos < 0 do
-        tryForwards()
-    end
+    dropAll()
     
     while depth < curDepth do
         tryDown()
     end
+    
+    full = false
 end
 end
 
-goToStart()
+dropAll()
 
 -- Seal the hole
 if reseal then
