@@ -233,7 +233,7 @@ if not done then
     
     goToStart()
     
-    while dept < curDepth do
+    while depth < curDepth do
         tryDown()
     end
 end
