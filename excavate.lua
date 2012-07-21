@@ -50,7 +50,7 @@ local function tryForwards()
 					return state.FULL
 				end
 	    	    else
-		        	return stat.DONE
+		        	return state.DONE
 		    end
 	    end
 	end
