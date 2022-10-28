@@ -56,6 +56,6 @@ local function getToDepth()
   end
   goStraightUp()
 end
-
+end
 print( "Going down! Hopefully I return!" )
 goToDepth()
