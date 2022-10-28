@@ -32,13 +32,13 @@ end
 
 local function goStraightUp()
   while depth > 0 do
-        if turtle.up() then
-          depth = depth - 1
-        elseif turtle.digUp() then
-          collect()
-        else
-          sleep(0.5)
-        end
+	if turtle.up() then
+	  depth = depth - 1
+	elseif turtle.digUp() then
+	  collect()
+	else
+	  sleep(0.5)
+	end
     end
 end
 
@@ -53,6 +53,7 @@ local function getToDepth()
     else -- Can't dig down. Probably bedrock or something
       goStraightUp()
     end
+  end
   goStraightUp()
 end
     
