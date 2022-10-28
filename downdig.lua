@@ -1,6 +1,5 @@
 local tArgs = { ... }
 
-
 if #tArgs ~= 2 then
 	print( "Usage: downdig <depth_to_dig> <diameter>. Only supplied args: ", #targs )
 	return
