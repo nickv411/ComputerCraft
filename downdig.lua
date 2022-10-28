@@ -40,6 +40,7 @@ local function goStraightUp()
           sleep(0.5)
         end
     end
+end
 
 local function getToDepth()
   while not turtle.down() and depth < target_depth do -- while cannot move down
