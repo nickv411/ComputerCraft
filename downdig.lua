@@ -1,5 +1,5 @@
 local tArgs = { ... }
-if #tArgs ~= 1 then
+if #tArgs ~= 2 then
 	print( "Usage: downdig <depth_to_dig> <diameter>" )
 	return
 end
@@ -11,6 +11,11 @@ local curr_depth = 0
 
 if target_size < 1 then
 	print( "Diameter must be positive" )
+	return
+end
+
+if target_depth < 1 then
+	print( "Depth must be positive" )
 	return
 end
 
