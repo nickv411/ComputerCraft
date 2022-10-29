@@ -54,7 +54,7 @@ local function goStraightUp()
 end
 
 local function getToDepth()
-  while not turtle.down() and depth < target_depth do -- while cannot move down
+  while (not turtle.down()) and (depth < target_depth) do -- while cannot move down
     if turtle.digDown() then -- if it can dig down
       if not collect() then -- try to collect
         return state.FULL
