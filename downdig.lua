@@ -8,7 +8,7 @@ end
 local target_depth = tonumber( tArgs[1] )
 local target_size = tonumber( tArgs[2] )
 local collected = 0
-local curr_depth = 0
+local depth = 0
 
 if target_size < 1 then
 	print( "Diameter must be positive" )
